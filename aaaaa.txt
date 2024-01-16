@@ -1,0 +1,2459 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+ 
+
+
+absolutna hodnota
+----------------------------------
+
+int absh(const int num){
+		int b=abs(num);
+		return b;
+	
+}
+
+int main (void)
+{
+   int num=-15;
+   int b=abs(num);
+   printf("value of a = %d\n", b);
+
+   return 0;
+}
+
+Alphabetical order of string
+----------------------------------
+
+
+void abecedne(char [], int);
+
+void abecedne(char array[], int size){
+	int i, j;
+	// vypis v poradi ASCII znakov(cisla)
+	/*for(i=  0; i< size; i++){
+		printf("%d ", array[i]);
+	}*/	
+	for(i = 0; i < size ; i++){
+		for(j = 0 ; j < size-1; j++){
+				int temporary = array[j+1];
+				array[j+1] = array[j];
+				array[j] = temporary;	
+		}
+	}
+	for(i = 0; i < size; i++){
+		printf("%c", array[i]);
+	}
+}
+
+
+int main(void){
+	
+	char pole[] = "dsdaabc ";
+	int velkost = strlen(pole);
+	abecedne(pole, velkost);
+}
+
+Alphanumeric text
+----------------------------------
+
+
+int isalfanum(char string[], int size){
+	int i = 0, counter= 0;
+	for(i=0;i< size; i++){
+		if(isalnum(string[i]))
+			counter++;
+		else
+			return 1;
+	}
+	if(counter == size) 
+	return 0;
+	else return 1;
+}
+
+int main(void){
+	char array[] = "pol/";
+	int size = strlen(array);
+	printf("%d", isalfanum(array, size));
+}
+
+Delitelne tromi
+----------------------------------
+
+int three(const int num){
+	if(num %3==0){
+		return 0;
+	}
+	else{
+		return 1;
+	}
+}
+
+Discriminant
+----------------------------------
+
+float discriminant(const float a, const float b, const float c){
+		
+		
+		float discrim = (b * b) - (4.0*a*c);
+		return discrim;
+}
+
+Factorial
+----------------------------------
+ 
+int main()
+{
+  int i, num, fact = 1;
+ 
+  printf("Enter a number to calculate it's factorial\n");
+  scanf("%d", &num);
+ 
+  for (i = 1; i <= num; i++){
+  	fact = fact * i;
+  }
+    
+  printf("Factorial of %d = %d\n", n, fact);
+ 
+  return 0;
+}
+
+Change of first characters to upper case
+------------------------------------------
+
+void bigWord(char array[] , int size){
+int size= strlen(array);	
+int i, j;
+	for(i= 0; i< size;i++){
+		if(i == 0){
+			array[i] = toupper(array[i]);
+		}
+		else if(isspace(array[i])){
+				array[i+1] = toupper(array[i+1]); 
+		}
+	}
+	printf("%s", array);
+
+}
+
+int main(void){
+
+ 	char array[] = "bla bla bla";
+	int size = strlen(array);
+	bigWord(array, size);
+
+}
+
+is fibonanci
+-------------------------------------
+
+int fibonaci(int number){
+    int last = 1;
+    int result = 1;
+    int temporary;
+    while (result < number){
+        temporary = last;
+        last = result;
+        result = result + temporary;
+    }
+    if (result == number){
+    	return 0;
+	}
+    else{
+    	return -1;
+	}
+}
+
+int main(void){
+
+	printf("%d", fibonaci(8));
+}
+
+Is hexedecimal
+------------------------------------
+
+int main(void){
+   char string[] = "C0";
+   if( isxdigit(string[0]))
+   {
+      printf("Is hexadecimal character\n");
+   }
+   else
+   {
+      printf("Is not hexadecimal character\n");
+   }
+   return(0);
+}
+
+Is prime
+-------------------------------------
+
+// return 0 - je prvocislo
+// return 1, -1 nie je , podla kodu 
+
+int isPrime(const int num){
+	int i, counter = 0;
+	if(num != 1 && num >= 1){
+	
+		for(i = num-1; i > 1; i--){
+			if(num % i == 0)
+				return 1;
+			else {
+				counter++;
+			}
+		}
+		if(counter == num-2){
+			return 0;
+		}
+	}
+	else if(num == 0){
+		return -1;
+	}
+	else {
+		return 0;
+	}
+}
+
+int main(void){
+	int num=7;
+	isPrime(num);
+	
+	
+}
+
+Is samohlaska
+-------------------------------
+
+char isSamohlaska(const char array[]){
+	if(array != NULL) {
+		char samohlaska[]= "aeiouyAEIOUY";
+		int i, j;
+		for(i = 0; i < strlen(array); i++){
+			for(j = 0 ; j < strlen(samohlaska); j++){
+				if(array[i] == samohlaska[j]){
+					return samohlaska[j];
+				}
+			}
+		}
+	}
+}
+
+Is upper to lower is lower to upper
+-------------------------------------
+
+///zadanie bolo takto: 
+//mate string, namiesto malych pismen dajte velke , namiesto velkych male
+//zachovajte biele znaky(medzery a pod)
+
+void array(const char string[]){
+		int i;
+		char returned[strlen(string)]; 
+		for(i = 0; i < strlen(string); i++){
+			if(isalnum(string[i])){
+				if(islower(string[i])){
+					returned[i]  = toupper(string[i]);
+				}else if(isupper(string[i])){
+					returned[i]  = tolower(string[i]);
+				}
+			}
+			else {
+				returned[i] = string[i];
+			}
+		}
+		for(i = 0; i < strlen(string); i++){
+			printf("%c", returned[i]);
+		}	
+}
+
+int main(void){
+	char a[] = "hello WORLD!";
+	array(a);
+}
+
+is white
+--------------------------------
+
+int isWhite(const char string[]){
+	int i, counter= 0, size = strlen(string);
+	if(string == NULL){
+		return -1;
+	}	
+	for(i = 0; i < size; i++){
+		if(isspace(string[i])){
+			counter++;
+		}
+	}
+	return counter;
+}
+
+Last char
+---------------------------------
+
+int lastChar(const char c[]){
+	int len=strlen(c);
+	int num=len-1;
+	printf("%c",c[num]);
+}
+
+int main(){
+	char c[] ="ABC";
+	lastChar(c);
+	return 0;
+}
+
+Linear search of position an item from string
+----------------------------------------------
+
+int search(int item[], int find, int size){
+	int find, size = sizeof(items)/sizeof(int);
+	int index=-1, i;
+	for(i = 0; i < size ; i++){
+		if(find == item[i])
+			index = i;
+	}
+ 	return index;
+	
+}
+int main(void){
+	int items[] = {1, 99, 12,3 ,45, 7};
+	int find, size = sizeof(items)/sizeof(int);
+	printf("Which one u wan to find");
+	scanf("%d", &find);
+	
+	int position = search(items, find, size);
+	if(position != -1) 
+	printf("%d is position of %d", position+1, find);
+	else 
+	printf("%d does not exist", find);
+}
+
+5 bodove ulohy
+--------------------------------------
+
+int three(const int num){
+	if(num %3==0){
+		return 0;
+	}
+	else{
+		return 1;
+	}
+}
+
+int isxdigit(const char c){
+	if(isxdigit(c)!=0){
+		return 1;
+	}
+	else{
+		return 0;
+	}
+}
+
+char lastString(const char string[]){
+	if(string==NULL){
+		return -1;
+	}
+	else{
+	int num=strlen(string);
+	return string[num-1];
+	}	
+}
+
+int minimumOfThreeNumbers(const int a, const int b, const int c){
+	int min;
+		if(a>b){
+			min=b;
+		}
+		else if(a < b){
+			min=a;
+		}
+		else if(c < min){
+			min=c;
+		}
+	return min;
+}
+
+int maxOfArray(const int num[], size){
+	if(string==NULL){
+		return -1;
+	}
+	int max;
+	for(i=0;i < size;i++){
+		if(num[i]>num[i+1]){
+			max=num[i];
+		}
+	}
+	return max;
+}
+
+int isInString(const char string[]){
+	int i;
+	int counter=0;
+	for(i=0;i < size;i++){
+		if(string[i]=='A'){
+			counter++;
+		}
+	}
+	return counter;
+}
+
+// return 0 - je prvoislo
+// return 1, -1 nie je , podla kodu 
+int isPrime(const int num){
+	int i, counter = 0;
+	if(num != 1 && num >= 1){
+	
+		for(i = num-1; i > 1; i--){
+			if(num % i == 0)
+				return 1;
+			else {
+				counter++;
+			}
+		}
+		if(counter == num-2){
+			return 0;
+		}
+	}
+	else if(num == 0){
+		return -1;
+	}
+	else {
+		return 0;
+	}
+}
+
+
+
+int sort(char string[], int size){
+	if(string==NULL){
+		return -1;
+	}
+	int i;
+	for(i=0;i < size;i++){
+		if(isspace(string[i])){
+			return -1;
+		}
+	}
+	int temp;
+	for(i=0;i < size;i++){
+		for(j=0;j < size-1;j++){
+			if(string[j] > string[j+1]){
+				temp=string[j];
+				string[j]=string[j+1];
+				string[j+1]=temp;
+			}
+		}
+	}
+}
+
+char isSamohlaska(const char array[]){
+	if(array != NULL) {
+	
+		char samohlaska[]= "aeiouyAEIOUY";
+		int i, j;
+		for(i = 0; i < strlen(array); i++){
+			for(j = 0 ; j < strlen(samohlaska); j++){
+				if(array[i] == samohlaska[j]){
+					return samohlaska[j];
+				}
+			}
+		}
+	}
+}
+
+int sucet(int array[], int size){
+if(array == NULL){
+		return 1;
+	}
+	int result = 0;
+	int i;
+	for(i = 0 ; i < size; i++){
+		result += array[i];
+	}
+	return result;
+}
+
+
+//return -1 ak nie je
+//return 0 ak je
+int fibonaci(int number)
+{
+    int last = 1;
+    int result = 1;
+    int temporary;
+    while (result < number)
+    {
+        temporary = last;
+        last = result;
+        result = result + temporary;
+    }
+
+    if (result == number)
+        return 0;
+    else
+        return -1;
+
+}
+
+
+int main(void){
+
+	printf("%d", fibonaci(8));
+}
+
+
+
+int main(void){
+	int string[] = {1,2,3,4,5,6,7,8,9,10};
+	int size = sizeof(string) / sizeof(int);
+	printf("%d", sucet(string, size));
+}
+
+
+VSETKO
+----------------------------------------------------------------
+BIELY CHARAKTER
+int count_whites(char string[]){
+    int counter = 0;
+    for (int i = 0; i < strlen(string); i++){
+        if(string[i] == ' ' || string[i] == '\n' || string[i] == '\t' ){
+            counter++;
+        }
+    }
+    return counter;
+}
+
+Pozicia Karla
+int last_positive() (const char dir){ 
+    if(dir == 'N'){
+        return 90;
+    } else if(dir == 'W'){
+        return 180;
+    } else if(dir == 'S'){
+        return 270;
+    } else if(dir == 'E'){
+        return 0;
+    }else {
+        return -1;
+    }
+}
+
+POSLEDNE POZITIV V POLI
+    int positive = -1;
+    for (int i = 0; i < size; i++){
+        if(array[i] > 0){
+            positive = array[i];
+        }
+    }
+    return positive;
+    
+DELITELNE TROMI
+
+int div_by_3(const int num) (const char dir){
+    if(num%3 == 0)
+        return 1;
+    return 0;
+}
+
+DVOJROZMERNE POLE
+
+int max_2d(const int size, int array[][size]){
+    if(array == NULL){
+        return -1;
+    }
+ 
+    int highest = 0;
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; ++j) {
+            if(array[i][j] > highest) {
+                highest = array[i][j];
+            }
+        }
+    }
+    return highest;
+}
+
+PRIME PRVOCISLO
+
+int isPrime(const int num){
+        int i, counter = 0;
+        if(num != 1 && num >= 1){
+        
+                for(i = num-1; i > 1; i--){
+                        if(num % i == 0)
+                                return 1;
+                        else {
+                                counter++;
+                        }
+                }
+                if(counter == num-2){
+                        return 0;
+                }
+        }
+        else if(num == 0){
+                return -1;
+        }
+        else {
+                return 0;
+        }
+}
+
+
+FIBONACI
+
+
+int fibonaci(int number){
+    int last = 1;
+    int result = 1;
+    int temporary;
+    while (result < number){
+        temporary = last;
+        last = result;
+        result = result + temporary;
+    }
+    if (result == number){
+            return 0;
+        }
+    else{
+            return -1;
+        }
+}
+
+NAJVACSIE NAJMENSIE CISLO MAX MIN
+int size = sizeof(array)/sizeof(int);
+int max(const int numbers[], int size){
+        if(numbers != NULL && size >= 1){
+                int j, max=0;
+                for(j = 0; j < size; j++){
+                        if(numbers[j] > max){
+                                max = numbers[j];
+                        }
+                }
+                return max;
+        }
+        else{
+        return 1;
+        }
+}
+
+SUCET VSETKYCH CISEL
+
+int sucet(int array[], int size){
+if(array == NULL){
+                return 1;
+        }
+        int size = sizeof(string) / sizeof(int);
+        int result = 0;
+        int i;
+        for(i = 0 ; i < size; i++){
+                result += array[i];
+        }
+        return result;
+}
+
+REVERSE OF STRING PREHOD PISMENKA
+        int size = sizeof(array)/sizeof(int);
+        int i,j;
+        int temp;
+         int end=size-1;
+  for (i = 0; i < size/2; i++) {
+    temp          = array[i];
+    array[i]   = array[end];
+    array[end] = temp;
+    end--;
+  }
+  
+          for(j = 0; j < size; j++){
+                  printf("%d ",array[j]);
+          }
+          return 0;
+}
+
+
+ZMENA VELKE PISMENA NA MALE PISMENA
+
+void array(const char string[]){
+                int i;
+                char returned[strlen(string)]; 
+                for(i = 0; i < strlen(string); i++){
+                        if(isalnum(string[i])){
+                                if(islower(string[i])){
+                                        returned[i]  = toupper(string[i]);
+                                }else if(isupper(string[i])){
+                                        returned[i]  = tolower(string[i]);
+                                }
+                        }
+                        else {
+                                returned[i] = string[i];
+                        }
+                }
+                for(i = 0; i < strlen(string); i++){
+                        printf("%c", returned[i]);
+                }        
+}
+
+SAMOHLASKA
+char isSamohlaska(const char array[]){
+        if(array != NULL) {
+                char samohlaska[]= "aeiouyAEIOUY";
+                int i, j;
+                for(i = 0; i < strlen(array); i++){
+                        for(j = 0 ; j < strlen(samohlaska); j++){
+                                if(array[i] == samohlaska[j]){
+                                        return samohlaska[j];
+                                }
+                        }
+                }
+        }
+}
+
+SEARCH NAJDI FIND
+
+int search(int item[], int find, int size){
+        int find, size = sizeof(items)/sizeof(int);
+        int index=-1, i;
+        for(i = 0; i < size ; i++){
+                if(find == item[i])
+                        index = i;
+        }
+         return index;
+        
+}
+
+
+
+
+BIG WORD VELKE PISMENO
+void bigWord(char array[] , int size){
+int size= strlen(array);        
+int i, j;
+        for(i= 0; i< size;i++){
+                if(i == 0){
+                        array[i] = toupper(array[i]);
+                }
+                else if(isspace(array[i])){
+                                array[i+1] = toupper(array[i+1]); 
+                }
+        }
+        printf("%s", array);
+
+}
+
+
+FAKTORIAL 
+  for (i = 1; i <= num; i++){
+          fact = fact * i;
+  }
+
+
+
+COUTNER OF CHARACTERS
+
+int count(const char string[], const char c){
+        if(string != NULL) {
+        int i, counter=  0;
+        for(i = 0; i < strlen(string); i++){
+                if(string[i] == c)
+                        counter++;        
+                        
+        }
+        return counter;
+        }
+
+
+}
+
+ALFANUM 
+
+int isalfanum(char string[], int size){
+    int size=strlen(array);
+        int i = 0, counter= 0;
+        for(i=0;i< size; i++){
+                if(isalnum(string[i]))
+                        counter++;
+                else
+                        return 1;
+        }
+        if(counter == size) 
+        return 0;
+        else return 1;
+}
+
+
+ABSOLUTNA HODNOTA 
+int absh(const int num){
+                int b=abs(num);
+                return b;
+        
+}
+
+ALPHABETICAL ORDER OF STRING
+
+void abecedne(char array[], int size){
+    int size = strlen(array);
+        int i, j;
+        // vypis v poradi ASCII znakov(cisla)
+        /*for(i=  0; i< size; i++){
+                printf("%d ", array[i]);
+        }*/        
+        for(i = 0; i < size ; i++){
+                for(j = 0 ; j < size-1; j++){
+                                int temporary = array[j+1];
+                                array[j+1] = array[j];
+                                array[j] = temporary;        
+                }
+        }
+        for(i = 0; i < size; i++){
+                printf("%c", array[i]);
+        }
+}
+
+
+HESLO
+
+FILE* fp = fopen("estiminator.c", "r+");
+ 
+char sz[6];
+ 
+ 
+fgets(sz, 6, fp);
+int size = atoi(sz);
+ 
+char buffer[50];
+char c;
+int i = 0;
+int lines = 0;
+while(lines < size){
+    int next = 2;
+    //precita riadok
+    while((c = gets(fp)) != '\n'){
+        buffer[i++] = c;
+        if(!isalnum(buffer[i])){
+            printf("Weak password.\n");
+            next = 0;
+            break;
+        }
+ 
+    }
+    i = 0;
+    if(i < 10){
+        printf("Weak password.\n");
+    } else if(i > 10 && next == 2){
+        next = 1;
+    }
+    int upper = 0, lower = 0, digit = 0;
+    while(next && buffer[i] != '\n'){
+        //include ctype.h!!
+        if(isupper(buffer[i])){
+            upper = 1;
+        }else if(islower(buffer[i])){
+            lower = 1;
+        } else if(isdigit(buffer[i])){
+            digit = 1;
+        }
+    }
+    if (digit && upper && lower){
+        printf("Strong password. \n");
+    }
+ 
+    lines++;
+}
+
+all in one
+--------------------------------------------------------------
+int count_zeroes_2d(const inst size, int array[][size]){
+
+int counter = 0;
+for(int i=0; i < size; j++){
+if(array[i][j] == 0){
+counter++;
+}
+}
+return counter; 
+} 
+
+
+int change_whites(char string[]){
+
+int len_s=strlen(string);
+ for(int i=0; i < len_s; i++){
+if (string[i]==' ' || string[i]=='\n'){
+string[i]='.';
+}
+}
+return 0;
+} 
+
+
+int is_in_array_2d(const int num, const int size , int array[][size]){
+
+        if(array == NULL){
+                return -1;
+        }
+        for(int i = 0; i < size ; i++){
+                for(int j = 0 ; j < size; j++){
+                        if(array[i][j] == num){
+                                return 1;
+                        }
+                }
+
+        }
+        return 0;
+} 
+
+
+int is_white(const char c){
+
+ if(c == ' ' || c== '\t' || c= '\n'){
+  return 1;
+} 
+ else
+{
+ return 0;
+ }
+return 0;
+} 
+
+
+int largest_line(const_int size, int array[][size]){
+
+int pom=0, s=0, max=0;
+for(int i=0; i < size; i++){
+    for(int j=0; j < size; j++){
+s+=array[i][j]; }
+if(pom < j){
+pom = j;
+max = i;
+j = 0;
+}
+}
+return max;
+} 
+
+LONGEST_ROW
+
+int longest_row(const int rows,const int cols,char array[rows][cols]){ 
+
+        int max = 0;
+        int k = 0;
+        if(array == NULL || rows < 1 || cols < 1 ){
+                return -1;
+        }
+        for(int i = 0; i < rows ; i++){
+                for(int j = 0; j < cols ; j++){
+                        if(array[i][j] != '\0'){
+                                if(max < j){
+                                        max = j - 1;
+                                        k = i;
+                                }
+                        }
+                }
+        }
+        return k;
+} 
+
+MAX_2D
+
+int max_2d(const int size, int array[][size]){ 
+
+        int sum = 0;
+        if(array == NULL){
+                return -1;
+        }
+        for(int i = 0; i < size ; i++){
+                for(int j = 0 ; j < size; j++){
+                        if(array[i][j] > sum){
+                                sum = array[i][j];
+                        }
+
+                }
+        }
+        return sum;
+
+} 
+
+MIN_2D
+
+int min_2d(const int size, int array[][size]){
+
+        int sum = 10000;
+        if(array == NULL){
+                return -1;
+        }
+        for(int i = 0; i < size ; i++){
+                for(int j = 0 ; j < size; j++){
+                        if(array[i][j] < sum){
+                                sum = array[i][j];
+                        }
+
+                }
+        }
+        return sum;
+
+} 
+
+SWAP CASE 2D
+
+void swap_case_2d(const int rows, const int cols, char strings[][cols]){
+
+for(int i=0; i < rows; i++){
+int pocet = strlen(strings[i]);
+if(pocet == 0){
+continue;
+}
+for(int j=0; j < pocet; j++){
+if(strings[i][j] >= 'a' && strings[i][j] <= 'z'){
+strings[i][j] -= 32;}
+else if(strings[i][j]>= 'A' && strings[i][j] <= 'Z'){
+strings[i][j] += 32;
+}
+}
+}
+} 
+
+VOWELS COUNT 2D
+
+int vowels_count_2d(const int rows, const int cols, char string[][cols]){
+
+if(string==NULL){
+return -1;
+}
+int k=0;
+char sam[] = "aeiouAEIOU";
+for(int i=0; i < rows; i++){
+int pocet = strlen(string[i]);
+if(pocet=0){
+continue;
+}
+for(int l=0; l<  pocet; l++){
+for(int m=0; m < strlen(sam); m++){
+if(string[i][j] == sam[m]){
+k++;}
+}
+}
+}
+return k;
+}
+
+STRING TO UPPER
+
+void string_to_upper(char string[]){
+  if(string !=NULL){
+   char returned[strlen(string)]; 
+    for(int i=; i < strlen(string); i++){
+     if(islower(string[i])){
+      returned[i]=toupper(string[i]); 
+      string[i]=returned[i];
+     } 
+      else string[i]=string[i];
+    }
+  }
+} 
+
+SWAP SIGN
+
+void swap_sign(const int size, int array[]){
+    for(int i=0; i < 6; i++){
+     if(array[i]==0){
+      array[i] = 0;      
+     } 
+     array[i] = array[i]*-1); 
+    }
+} 
+
+FIB2ARRAY
+
+void fib2array(const int size, int array[]){
+     array[0] = 1; 
+     array[1] = 1; 
+     for(int i=2; i < 6; i++){
+      array[i] = array[i-1] + array[i-2];
+     }
+} 
+
+KAREL A SLEEP
+
+int karel_asleep(const char position){
+if(position == '_'){
+return 1;
+} 
+if(position == '|'){
+return 0;
+}
+if(position == '#'){
+return -1;
+}
+return 0; 
+} 
+
+NEGATIVE EVEN
+
+int negative_even(const int number){
+if(number < 0 && number % 2 == 0){
+return 1;
+}
+else{
+return 0;
+}
+}
+
+SUM GREATER
+
+int sum_greater(const int a, const int b, const int c){
+int r=0;
+if(a>b && c>b){
+r=(a+c);
+}
+if(a>c && b>c){
+r=(a+b);
+}
+if(b>a && c>a){
+r=(b+c);
+}
+return r;
+} 
+
+SUM DIGITS
+
+int sum_digits(const long int number){
+ if(number < 0){
+return 0;
+} 
+long int sum =0;
+long int r =0;
+long int t = number;
+while(t !=0){
+r = (t % 10);
+sum = sum + r;
+t = t / 10;
+}
+
+return sum; 
+
+SPZ
+
+int check_SPZ(const char spz[]){
+if(spz == NULL){
+        return -1;
+    }
+else{
+int a=0;
+if(strlen(spz)==7){
+if(isupper(spz[0])){
+a++;
+}
+if(isupper(spz[1])){
+a++;
+}
+if(isdigit(spz[2])){
+a++;
+}
+if(isdigit(spz[3])){
+a++;
+}
+if(isdigit(spz[4])){
+a++;
+}
+if(isupper(spz[5])){
+a++;
+}
+if(isupper(spz[6])){
+a++;
+}
+if(a==7){
+return 1;
+}
+else{
+return 0;
+}
+
+}
+} 
+return 0;
+}
+
+DIGITS SUM SEQUENCE
+
+int digits_sum_sequencie(const int size, int array[]) {
+
+	int i;
+	int an = 1;
+	int sn = 0;
+	int zv;
+	int d;
+	int sc = 0;
+	int sck = 0;
+	int l=0;
+	for (i = 0; i < size; i++) {
+		if (an < 10) {
+			
+			zv = (an % 10);
+			an = an + zv;
+			if ((zv == 1) && (i==0))an = an - 1;
+			d = an;
+		}
+		else {
+			l++;
+			d = an;
+			sc = 0;
+			while (1) {
+				if ((d / 10) < 1) {
+					sc = sc + (d%10);
+					break;
+					
+				}
+				zv = (d % 10);
+				d = (d / 10);
+				sc = sc + zv;
+			
+				
+			}
+			
+			an = sc + an;
+			d = an;
+			sc = 0;
+		}
+	}
+	sn = an;;
+	return sn;
+} 
+
+DIGITS SUM SEQUENCE
+
+digits_sum_sequence(const int size, int array[]{
+    if(array == NULL || size == 0){
+    return;
+    } 
+    array[0] = 1; 
+    int sum = 0; 
+    for(int i=0; i < size; i++){
+       sum=sum + array[i-1]; 
+       array[i] = sum;
+}
+} 
+
+COMPARE ARRAY SUM
+
+int comare_array_sum(const int array[], const int size, const int sum){
+   if(array==0){
+    return 0;
+}
+   int a[size]; 
+   int res=0; 
+    for(int i=0; i < size; i++){
+     a[i]=array[i]; 
+     if(a[i] < 0){
+      a[i]=(a[i]*-1);
+     }
+    res = res+a[i];
+   }
+    if(res > sum){
+     return 1;
+    } 
+    if(res < sum){
+     return -1;
+    }
+return 0;
+} 
+
+FIND MAX
+
+int find_max(const int array[], const int size){
+   if(array==NULL){
+   return 0;  
+} 
+  int max=0; 
+  for(int i=0; i < size; i++){
+   if(array[i]>max){
+   max=array[i];
+}
+}
+ return max;
+}
+
+BRACKET BALANCE
+
+int bracket_balance(char text[]){
+if(text == NULL){
+return 0;
+}
+int sum;
+int countl = 0;
+int countp = 0;
+for(int i=0; i < strlen(text); i++){
+if(text[i] == '('){
+countl++;
+}
+if(text[i]==')'){
+countp++;
+}
+} 
+sum = countl - countp;
+return sum;
+}
+
+FIND CHAR
+
+int find_char(char text[], char letter){
+if(text==NULL){
+return -1;
+}
+int count = 0;
+for( int i=0; i < strlen(text); i++){
+if(text[i]==letter){
+count++;
+}
+}
+return count;
+
+
+void string_to_upper(char string[]){
+  if(string !=NULL){
+   char returned[strlen(string)]; 
+    for(int i=; i < strlen(string); i++){
+     if(islower(string[i])){
+      returned[i]=toupper(string[i]); 
+      string[i]=returned[i];
+     } 
+      else string[i]=string[i];
+    }
+  }
+} 
+
+
+void swap_sign(const int size, int array[]){
+    for(int i=0; i < 6; i++){
+     if(array[i]==0){
+      array[i] = 0;      
+     } 
+     array[i] = array[i]*-1); 
+    }
+} 
+
+
+void fib2array(const int size, int array[]){
+     array[0] = 1; 
+     array[1] = 1; 
+     for(int i=2; i < 6; i++){
+      array[i] = array[i-1] + array[i-2];
+     }
+}
+
+
+COUNT LEAP YEARS
+
+int count_leap_years(const int size, const int array[]){
+if(array==NULL){
+return -1;
+}else{
+int p=0;
+int n=0;
+for(int i =0;i < size;i++){
+
+if (array[i]%400 == 0){
+p++;}
+  else if (array[i]%100 == 0){
+n++;
+}
+  else if (array[i]%4 == 0) {
+p++;
+}
+  else{
+n++;
+} }
+return p;  
+ }
+}
+
+IS TRIANGLE
+
+int is_triangle(const int alpha, const int beta, const int gamma){
+int sum = (alpha + beta +gamma);
+if(sum == 180){
+return 1;
+}
+if(alpha < 1 || beta < 1 || gamma < 1 && sum < 180){
+return -1;
+}else{return 0;}
+}
+
+SORT DESC
+
+void sort_desc(int array[], const int size) {
+if(array==NULL || size < 1){
+goto End;
+    
+}else{   
+    int temp =0;
+    for(int i=0; i < size; i++){  
+                 for(int j=1; j < (size-i); j++){  
+                          if(array[j-1] < array[j]){  
+                                 temp = array[j-1];  
+                                 array[j-1] = array[j];  
+                                 array[j] = temp;  
+                         }  
+                          
+                 }
+    }
+}
+End:;
+} 
+
+SAME CASE
+
+int same_case(const char a, const char b){
+  if(isupper(a) && isupper(b)){
+  return 1;
+  } 
+  
+  if(islower(a) && islower(b)){
+  return 1;
+  } 
+
+  if(isupper(a) && islower(b)){
+   return 0;
+  } 
+  
+  if(islower(a) && isupper(b)){
+   return 0;
+  } 
+  return -1;
+} 
+
+char last_letter(const char string[]){
+ char r; 
+ r=0; 
+ int l; 
+ if(string == NULL){
+  return '?';
+ } 
+  l=strlen(string); 
+   for(int i=0; i < l; i++){
+    if((string[i] >='a' && string[i]<='z') || (string[i]>='A' && string[i] <='Z')){
+     r=string[i];
+    }
+   } 
+    if(r =='0'){
+     return '?';
+    } 
+  else{
+   return r;
+}
+}
+
+int max_2d(const int size, int array[][size]){
+    if(array == NULL){
+        return -1;
+    }
+ 
+    int highest = 0;
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; ++j) {
+            if(array[i][j] > highest) {
+                highest = array[i][j];
+            }
+        }
+    }
+    return highest;
+} 
+
+
+
+int count_negative_evens(const int size, const int array[]){
+if(array == NULL){
+        return -1;
+    }
+else{
+int p=0;
+for(int i =0;i < size;i++){
+if(array[i]%2==0 && array[i]+(array[i]*-1)==0 ){
+p++;
+}
+}
+return p;
+}
+} 
+
+
+
+
+
+int negative_even(const int number){
+if(number%2==0 && number+(number*-1)==0 && number!=0 ){
+return 1;
+}
+else{
+return 0;
+}
+} 
+
+
+int pick_possible(const int corner){
+if(corner < 0){
+return -1;
+}
+if(corner==0){
+return 0;
+}
+if(corner>0){
+return 1;
+}
+} 
+
+int negative_even(const int number){
+if(number%2==0 && number < 0 && number!=0 ){
+return 1;
+}
+else{
+return 0;
+}
+}
+
+
+int check_SPZ(const char spz[]){
+if(array == NULL){
+        return -1;
+    }
+else{
+int a=0;
+if(strlen(spz)==7){
+if(isupper(spz[0])==1){
+a++;
+}
+if(isupper(spz[1])==1){
+a++;
+}
+if(isdigit(spz[2])==1){
+a++;
+}
+if(isdigit(spz[3])==1){
+a++;
+}
+if(isdigit(spz[4])==1){
+a++;
+}
+if(isupper(spz[5])==1){
+a++;
+}
+if(isupper(spz[6])==1){
+a++;
+}
+if(a==7){
+return 1;
+}else{
+return 0;
+}
+}
+
+}
+} 
+
+
+int check_SPZ(const char spz[]){
+if(array == NULL){
+        return -1;
+    }
+else{
+int a=0;
+if(strlen(spz)==7){
+if(isupper(spz[0])==1){
+a++;
+}
+if(isupper(spz[1])==1){
+a++;
+}
+if(isdigit(spz[2])==1){
+a++;
+}
+if(isdigit(spz[3])==1){
+a++;
+}
+if(isdigit(spz[4])==1){
+a++;
+}
+if(isupper(spz[5])==1){
+a++;
+}
+if(isupper(spz[6])==1){
+a++;
+}
+if(a==7){
+return 1;
+}else{
+return 0;
+}
+}
+
+}
+}
+
+
+Program
+---------------------------------
+int cas;
+scanf("%d", &cas); 
+
+int sekundy = cas % 60; 
+int minuty_zo_sekund = cas / 60; 
+
+int minuty_z_hodiny = minuty_zo_sekund % 60; 
+int hodiny_z_minut = minuty_zo_sekund / 60; 
+
+int hodiny_z_dna = hodiny_z_minut % 24; 
+int dni_z_hodin = hodiny_z_minut /24; 
+
+int dni_z_mesiaca = dni_z_hodin % 30;
+int mesiace_z_dni = dni_z_hodin / 30; 
+
+int mesiace_z_roka = mesiace_z_dni % 12; 
+int roky_z_mesiacov = mesiace_z_dni / 12; 
+
+printf("%d years %d months %d days %d hours %d minutes %d second \n",roky_z_mesiacov, 
+mesiace_z_roka, dni_z_mesiaca, hodiny_z_dna, minuty_z_hodiny, sekundy); 
+return 0; 
+
+
+PASSWORD ESTIMILATOR
+
+int main(){
+printf("Zadaj pocet hesiel\n");
+int p;
+scanf("%d", &p);
+
+for(int i=0; i < p; i++){
+char password[50];
+scanf("%s", password);
+
+int jeden=0, dva=0, tri=0, nL=0;
+
+for(size_t index = 0; index < strlen(password); index++){
+nL++;
+if(password[index] >= 'a' && password[index] <= 'z'){
+jeden++;
+}
+else if(password[index] >= 'A' && password[index] <= 'Z'){
+dva++;
+}
+else if(password[index] >= '0' && password[index] <= '9'){
+tri++;
+}
+}
+if(jeden >= 1){
+jeden = 1;
+}
+if(dva >= 1){
+dva = 1;
+}
+if(tri >= 1){
+tri = 1;
+}
+
+int s = jeden + dva + tri;
+if(s == 3 ){
+printf("Strong password\n");
+}
+else{
+printf("Weak password\n");
+}
+}
+return 0;
+}
+ 
+Round 1
+--------------------------------------
+void pick_all(){
+    while (beepers_present){
+        pick_beeper();
+    }
+}
+
+
+
+void find_south_east(){
+    while(not_facing_south()){
+        turn_left();
+    }
+    while(front_is_clear()){
+        step();
+    }
+    while(not_facing_east()){
+        turn_left();
+    }
+    while(front_is_clear()){
+        step();
+    }
+    while(not_facing_west()){
+        turn_left();
+    }
+}
+
+
+
+bool facing_vertical(){
+    if (facing_south() || facing_north()){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+
+
+bool no_beepers(){
+    if (no_beepers_present() && no_beepers_in_bag()){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+
+
+void turn_to_south(){
+    while (not_facing_south()){
+        turn_left();
+    }
+}
+
+
+
+void mark_empty_line(){
+    put_beeper();
+    while(front_is_clear()){
+        step();
+        put_beeper();
+    }
+}
+
+
+
+
+- - - stairs - - -
+
+void stairs() {
+    while(right_is_blocked() || not_facing_east()) {
+        if (right_is_clear()) {
+            turn_left();
+            turn_left();
+            turn_left();
+        }
+        else if (left_is_clear() && front_is_blocked()) {
+            turn_left();
+        }
+        else if (front_is_blocked()) {
+            turn_left();
+            turn_left();
+        }
+        while(beepers_present()) {
+            pick_beeper();
+        }
+        step();
+    }
+
+   turn_left();
+   turn_left();
+   step();
+   turn_left();
+   turn_left();
+   while(beepers_in_bag()) {
+        put_beeper();
+   }
+
+}
+
+
+
+- - - corner_marker - - -
+
+void corner_marker() {
+    while(not_facing_north()) {
+        turn_left();
+    }
+    while(front_is_clear()) {
+        step();
+    }
+    turn_left();
+    while(front_is_clear()) {
+        step();
+    }
+
+    turn_left();
+    turn_left();
+
+    while(no_beepers_present()) {
+        if (front_is_clear()) {
+            put_beeper();
+            step();
+        }
+        else {
+            turn_left();
+            turn_left();
+            turn_left();
+        }
+    }
+}
+
+
+
+- - - find_center - - -
+
+void center() {
+    step();
+    step();
+
+    if (front_is_clear()) {
+        center();
+    }
+
+    if (front_is_blocked()) {
+        turn_left();
+        turn_left();
+    }
+    step();
+}
+
+void find_center() {
+    while(not_facing_north()) {
+        turn_left();
+    }
+    while(front_is_clear()) {
+        step();
+    }
+    turn_left();
+    while(front_is_clear()) {
+        step();
+    }
+
+    turn_left();
+    turn_left();
+
+    center();
+    turn_left();
+    center();
+}
+
+
+- - - chessboard - - -
+
+void turn_right() {
+    turn_left();
+    turn_left();
+    turn_left();
+}
+
+void chessboard() {
+    while(front_is_clear()) {
+    turn_right();
+    if (front_is_clear()) {
+        step();
+        turn_left();
+        turn_left();
+        if (beepers_present()) {
+            step();
+            turn_right();
+            while (front_is_clear()) {
+                step();
+                put_beeper();
+                if (front_is_clear()) {
+                    step();
+                    if (front_is_clear()) {
+                        step();
+                        put_beeper();
+                        if (front_is_clear()) {
+                            step();
+                        }
+                    }
+                }
+            }
+        }
+        else {
+            step();
+            turn_right();
+            while (front_is_clear()) {
+                if (no_beepers_present()) {
+                    put_beeper();
+                }
+                if (front_is_clear()) {
+                    step();
+                    if (front_is_clear()) {
+                        step();
+                        put_beeper();
+                    }
+                }
+            }
+        }
+    }
+    else {
+        turn_left();
+        while (front_is_clear()) {
+            step();
+            put_beeper();
+            if (front_is_clear()) {
+                step();
+                if (front_is_clear()) {
+                    step();
+                    put_beeper();
+                    if(front_is_clear()) {
+                        step();
+                    }
+                }
+            }
+        }
+    }
+    turn_left();
+    turn_left();
+    while(front_is_clear()) {
+        step();
+    }
+    turn_right();
+    if (front_is_clear()) {
+        step();
+        turn_right();
+    }
+    }
+}
+
+
+
+- - - divide - - - 
+
+void divide(){
+    step();
+    while (beepers_present()) {
+        pick_beeper();
+    }
+    while(beepers_in_bag()) {
+        put_beeper();
+        step();
+        put_beeper();
+        turn_left();
+        turn_left();
+        step();
+        turn_left();
+        turn_left();
+    }
+}
+
+
+
+- - - olympics - - -
+
+void olympics() {
+    while(no_beepers_present()) {
+        if (right_is_clear()) {
+            turn_left();
+            turn_left();
+            turn_left();
+        }
+        else if (left_is_clear() && front_is_blocked()) {
+            turn_left();
+        }
+        else if (front_is_blocked()) {
+            turn_left();
+            turn_left();
+        }
+        step();
+    }
+
+}
+
+
+
+- - - x_mas - - -
+
+void x_mas() {
+    while(front_is_clear()) {
+        step();
+    }
+    turn_left();
+    turn_left();
+    while(right_is_blocked()) {
+        step();
+    }
+
+    turn_right();
+    step();
+    turn_right();
+    step();
+
+    while (right_is_blocked()) {
+        put_beeper();
+        turn_left();
+        step();
+        turn_right();
+        step();
+    }
+
+    put_beeper();
+    put_beeper();
+
+    step();
+    turn_right();
+    while(front_is_clear()) {
+        step();
+    }
+
+    while (front_is_blocked() && facing_south()) {
+        put_beeper();
+        turn_left();
+        step();
+        if (right_is_clear()) {
+            turn_right();
+            step();
+        }
+        else {
+            turn_left();
+            turn_left();
+            step();
+            pick_beeper();
+            turn_left();
+            turn_left();
+            while (front_is_clear()) {
+                step();
+            }
+        }
+
+    }
+
+}
+
+
+Round 2
+------------------------------------------
+int all_positives(const int size, const int array[]) {
+    
+    if (array == NULL) {
+        return -1;
+    }
+    
+    for (int i = 0; i < size; i++) {
+        if (array[i] <= 0) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+
+
+int binary_num(const int num) {
+    if (num >= -1000 && num <= 1000) {
+        if (num == 1 || num == 0) {
+            return 1;
+        } 
+        else {
+            return 0;
+        }
+    }
+    return -1;
+}
+
+
+
+int count_positives(const int size, const int array[]) {
+    
+    if (array == NULL) {
+        return -1;
+    }
+    
+    int counter = 0;
+    for (int i = 0; i < size; i++) {
+        if (array[i] > 0) {
+            counter++;
+        }
+    }
+    return counter;
+}
+
+
+
+int count_whites(const char string[]) {
+    
+    if (string == NULL) {
+        return -1;
+    }
+    
+    int counter = 0;
+    for (int i = 0; i < strlen(string); i++) {
+        if (string[i] == ' ' || string[i] == '\t' || string[i] == '\n') {
+            counter++;
+        }
+    }
+    return counter;
+}
+
+
+
+int direction_correction(const int degree) {
+    int stupne = degree;
+    if (stupne < 0 || stupne % 90 != 0) {
+        return -1;
+    }
+    
+    while (stupne >= 360) {
+        stupne -= 360;
+    }
+    return stupne;
+}
+
+
+
+int div_by_3(const int num) {
+    return (num % 3 == 0);
+}
+
+
+
+int find_first_A(const char string[]) {
+    
+    if (string == NULL) {
+        return -1;
+    }
+    
+    for (int i = 0; i < strlen(string); i++) {
+        if (string[i] == 'a' || string[i] == 'A') {
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+int guess_eval(const int guess, const int my_number) {
+    int result = -1;
+    if (guess > my_number) {
+        result = 0;
+    }
+    else if (guess < my_number) {
+        result = 2;
+    }
+    else if (guess == my_number) {
+        result = 1;
+    }
+    return result;
+}
+
+
+
+int is_white(const char c) {
+    return (c == ' ' || c == '\t' || c == '\n');
+}
+
+
+
+int last_positive(const int size, const int array[]) {
+    
+    if (array == NULL) {
+        return -1;
+    }
+    
+    for (int i = size-1; i >= 0; i--) {
+        if (array[i] > 0) {
+            return array[i];
+        }
+    }
+    return -1;
+}
+
+
+int leap_year(const int year) {
+    int result = -1;
+    if (year > 0 && year < 4444) {
+        if (year % 400 == 0) {
+            result = 1;
+        }
+        else {
+            if (year % 100 == 0) {
+                result = 0;
+            }
+            else {
+                if (year % 4 == 0) {
+                    result = 1;
+                }
+                else {
+                    result = 0;
+                }
+            }
+        }
+    }
+    return result;
+}
+
+
+int same_case(const char a, const char b) {
+    if (isalpha(a) && isalpha(b)) {
+        if (isupper(a)) {
+            if (isupper(b)) {
+                return 1;
+            }
+            return 0;
+        }
+        if (isupper(b)) {
+            return 0;
+        }
+        return 1;
+    }
+    return -1;
+}
+
+
+
+void change_whites(char string []) {
+    for (int i = 0; i < strlen(string); i++) {
+        if (string[i] == ' ' || string[i] == '\n') {
+            string[i] = '.';
+        }
+    }
+}
+
+
+
+void string_to_upper(char string[]) {
+    if (string != NULL) {
+        for (int i = 0; i < strlen(string); i++) {
+            if (!(isupper(string[i]))) {
+                string[i] = toupper(string[i]);
+            } 
+        }
+    }
+}
+
+
+
+void swap_sign(const int size, int array[]) {
+    for (int i = 0; i < size; i++) {
+        if (array[i] < 0) {
+            array[i] += ((-array[i])*2);
+        }
+        else if (array[i] > 0) {
+            array[i] -= (array[i]*2);
+        }
+    }
+}
+
+Round 3
+---------------------------------------------------------
+
+
+
+int max_2d(const int size, int array[][size]);
+int is_vowel(char c);
+int vowels_count_2d(const int rows, const int cols, char strings[][cols]);
+is_in_array_2d(const int num, const int size, int array[][size]);
+int largest_line(const int size, int array[][size]);
+void swap_case_2d(const int rows, const int cols, char strings[][cols]);
+int largest_col(const int size, int array[][size]);
+int count_zeroes_2d(const int size, int array[][size]);
+void swap_sign_2d(const int size, int array[][size]);
+int longest_row(const int rows, const int cols, char array[rows][cols]);
+
+
+
+
+
+
+
+int max_2d(const int size, int array[][size]) {
+    
+    if (array == NULL) {
+        return -1;
+    }
+    
+    int max = array[0][0]; 
+
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            if (array[i][j] > max) {
+                max = array[i][j];
+            }
+        }
+    }
+
+    return max;
+}
+
+int vowels_count_2d(const int rows, const int cols, char strings[][cols]) {
+    if (strings == NULL) {
+        return -1;
+    }
+
+   
+    int is_vowel(char c) {
+        c = tolower(c); 
+        return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+    }
+
+    int count = 0;
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            char current_char = strings[i][j];
+            if (is_vowel(current_char)) {
+                count++;
+            }
+        }
+    }
+
+    return count;
+}
+
+int is_in_array_2d(const int num, const int size, int array[][size]) {
+    if (array == NULL) {
+        return -1; 
+    }
+
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            if (array[i][j] == num) {
+                return 1; 
+            }
+        }
+    }
+
+    return 0; 
+}
+
+
+int largest_line(const int size, int array[][size]) {
+    if (array == NULL) {
+        return -1; 
+    }
+
+    int max_sum = 0; 
+    int max_index = 0; 
+
+    for (int i = 0; i < size; i++) {
+        int current_sum = 0; 
+
+        for (int j = 0; j < size; j++) {
+            current_sum += array[i][j]; 
+        }
+
+        if (current_sum > max_sum) {
+            max_sum = current_sum; 
+            max_index = i; 
+        }
+    }
+
+    return max_index;
+}
+
+
+
+void swap_case_2d(const int rows, const int cols, char strings[][cols]) {
+    if (strings == NULL) {
+        return; 
+    }
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols && strings[i][j] != '\0'; j++) {
+            if (islower(strings[i][j])) {
+                strings[i][j] = toupper(strings[i][j]);
+            } else if (isupper(strings[i][j])) {
+                strings[i][j] = tolower(strings[i][j]);
+            }
+        }
+    }
+}
+
+
+
+int largest_col(const int size, int array[][size]) {
+    if (array == NULL) {
+        return -1; 
+    }
+
+    int max_sum = 0; 
+    int max_index = 0; 
+
+    for (int j = 0; j < size; j++) {
+        int current_sum = 0; 
+
+        for (int i = 0; i < size; i++) {
+            current_sum += array[i][j]; 
+        }
+
+        if (current_sum > max_sum) {
+            max_sum = current_sum; 
+            max_index = j; 
+        }
+    }
+
+    return max_index;
+}
+
+
+int count_zeroes_2d(const int size, int array[][size]) {
+    if (array == NULL) {
+        return -1; 
+    }
+
+    int count = 0; 
+
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            if (array[i][j] == 0) {
+                count++; 
+            }
+        }
+    }
+
+    return count;
+}
+
+
+
+
+void swap_sign_2d(const int size, int array[][size]) {
+    if (array == NULL) {
+        return; 
+    }
+
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            array[i][j] = -array[i][j];
+        }
+    }
+}
+
+
+int longest_row(const int rows, const int cols, char array[rows][cols]) {
+    if (array == NULL || rows < 1 || cols < 1) {
+        return -1; 
+    }
+
+    int max_length = 0; 
+    int max_index = 0; 
+
+    for (int i = 0; i < rows; i++) {
+        int current_length = 0; 
+
+        for (int j = 0; j < cols && array[i][j] != '\0'; j++) {
+            current_length++; 
+        }
+
+        if (current_length > max_length) {
+            max_length = current_length; 
+            max_index = i; 
+        }
+    }
+
+    return max_index;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
