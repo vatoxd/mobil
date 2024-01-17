@@ -3,6 +3,19 @@
 #include <string.h>
 #include <ctype.h>
  
+long multiples(const int below) {
+  if (below < 0 || below >= 10000) {
+    return -1;
+  }
+
+  long sum = 0;
+  for (int i = 1; i < below; i++) {
+    if (i % 3 == 0 || i % 5 == 0) {
+      sum = sum + i;
+    }
+  }
+  return sum;
+}
 
 int count_whites(const char string[]){ 
  	int result = 0; 
