@@ -2,6 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+----------------------------------------------------
+DIV BY 3
+int div_by_3(const int num){
+  if(num % 3 == 0){
+    return 1;
+  }else{
+    return 0;
+  }
+}
 -----------------------------------------------------
 SWAP SIGN
 void swap_sign(const int size, int array[]){
