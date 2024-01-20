@@ -45,7 +45,7 @@ int all_positives(const int size, const int array[]){
   }
 }
 ------------------------------------------------------
-//4. LEAP YEAR
+LEAP YEAR
 int leap_year(const int year){
   if(year < 1 || year > 4443){
     return -1;
@@ -69,7 +69,7 @@ int leap_year(const int year){
 
   return -2;
 }
-
+-------------------------------------------------------------------------
 
 // VOWEL COUNT
 int vowels_count(const int rows, const int cols, char string[][cols]){
@@ -90,7 +90,7 @@ int vowels_count(const int rows, const int cols, char string[][cols]){
 
   return count;
 }
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // IS IN ARRAY
 int is_in_array_2d(const int num, const int size, int array[][size]){
@@ -108,7 +108,7 @@ int is_in_array_2d(const int num, const int size, int array[][size]){
 
   return 0;
 }
-
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
 // LARGEST COLUMN
 int largest_col(const int size, int array[][size]){
@@ -132,7 +132,7 @@ int largest_col(const int size, int array[][size]){
 
   return index;
 }
-
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
 long multiples(const int below) {
   if (below < 0 || below >= 10000) {
@@ -147,7 +147,7 @@ long multiples(const int below) {
   }
   return sum;
 }
-
+--------------------------------------------------------------------------------------------------------------------------------------------------
 int count_whites(const char string[]){ 
  	int result = 0; 
  	if (string == NULL){
@@ -158,9 +158,8 @@ int count_whites(const char string[]){
  		} 
  	return result; 
 }
-
+--------------------------------------------------------------------------------------------------------------------------------------------------
 //3
-
 int count_zeroes_2d(const int size, int array[][size]) {
     if (array == NULL) {
         return -1; 
@@ -178,7 +177,7 @@ int count_zeroes_2d(const int size, int array[][size]) {
 
     return count;
 }
-
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
 int longest_row(const int rows, const int cols, char array[rows][cols]) {
     if (array == NULL || rows < 1 || cols < 1) {
@@ -203,6 +202,7 @@ int longest_row(const int rows, const int cols, char array[rows][cols]) {
 
     return max_index;
 }
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
 int is_vowel(const char c) {
   if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
@@ -213,7 +213,7 @@ int is_vowel(const char c) {
     return 0;
   }
 }
-
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
 int is_in_array(const int num, const int size, const int array[]) {
   for (int i = 0; i < size; i++) {
@@ -223,7 +223,7 @@ int is_in_array(const int num, const int size, const int array[]) {
   }
   return 0;
 }
-
+--------------------------------------------------------------------------------------------------------------------------------------------------
 char make_direction(const char karel) {
   if (karel == '>') {
     
@@ -245,7 +245,7 @@ char make_direction(const char karel) {
     return '?';
   }
 }
-
+-----------------------------------------
 int is_prime(const int num) {
     if (num <= 1) return 0;
     for (int i = 2; i * i <= num; i++) {
@@ -589,7 +589,7 @@ int three(const int num){
 		return 1;
 	}
 }
-
+-------------------------------------------------------------------------
 int isxdigit(const char c){
 	if(isxdigit(c)!=0){
 		return 1;
@@ -598,7 +598,7 @@ int isxdigit(const char c){
 		return 0;
 	}
 }
-
+-------------------------------------------------------------------------
 char lastString(const char string[]){
 	if(string==NULL){
 		return -1;
@@ -608,7 +608,7 @@ char lastString(const char string[]){
 	return string[num-1];
 	}	
 }
-
+-------------------------------------------------------------------------
 int minimumOfThreeNumbers(const int a, const int b, const int c){
 	int min;
 		if(a>b){
@@ -622,7 +622,7 @@ int minimumOfThreeNumbers(const int a, const int b, const int c){
 		}
 	return min;
 }
-
+-------------------------------------------------------------------------
 int maxOfArray(const int num[], size){
 	if(string==NULL){
 		return -1;
@@ -635,7 +635,7 @@ int maxOfArray(const int num[], size){
 	}
 	return max;
 }
-
+-------------------------------------------------------------------------
 int isInString(const char string[]){
 	int i;
 	int counter=0;
@@ -646,7 +646,7 @@ int isInString(const char string[]){
 	}
 	return counter;
 }
-
+-------------------------------------------------------------------------
 // return 0 - je prvoislo
 // return 1, -1 nie je , podla kodu 
 int isPrime(const int num){
@@ -671,7 +671,7 @@ int isPrime(const int num){
 		return 0;
 	}
 }
-
+-------------------------------------------------------------------------
 
 
 int sort(char string[], int size){
@@ -695,7 +695,7 @@ int sort(char string[], int size){
 		}
 	}
 }
-
+-------------------------------------------------------------------------
 char isSamohlaska(const char array[]){
 	if(array != NULL) {
 	
@@ -710,7 +710,7 @@ char isSamohlaska(const char array[]){
 		}
 	}
 }
-
+-------------------------------------------------------------------------
 int sucet(int array[], int size){
 if(array == NULL){
 		return 1;
@@ -723,7 +723,7 @@ if(array == NULL){
 	return result;
 }
 
-
+-------------------------------------------------------------------------
 //return -1 ak nie je
 //return 0 ak je
 int fibonaci(int number)
@@ -772,7 +772,7 @@ int count_whites(char string[]){
     }
     return counter;
 }
-
+-------------------------------------------------------------------------
 Pozicia Karla
 int last_positive() (const char dir){ 
     if(dir == 'N'){
@@ -787,7 +787,7 @@ int last_positive() (const char dir){
         return -1;
     }
 }
-
+-------------------------------------------------------------------------
 POSLEDNE POZITIV V POLI
     int positive = -1;
     for (int i = 0; i < size; i++){
@@ -796,7 +796,7 @@ POSLEDNE POZITIV V POLI
         }
     }
     return positive;
-    
+-------------------------------------------------------------------------    
 DELITELNE TROMI
 
 int div_by_3(const int num) (const char dir){
@@ -804,7 +804,7 @@ int div_by_3(const int num) (const char dir){
         return 1;
     return 0;
 }
-
+-------------------------------------------------------------------------
 DVOJROZMERNE POLE
 
 int max_2d(const int size, int array[][size]){
@@ -822,7 +822,7 @@ int max_2d(const int size, int array[][size]){
     }
     return highest;
 }
-
+-------------------------------------------------------------------------
 PRIME PRVOCISLO
 
 int isPrime(const int num){
@@ -847,7 +847,7 @@ int isPrime(const int num){
                 return 0;
         }
 }
-
+-------------------------------------------------------------------------
 
 FIBONACI
 
@@ -868,7 +868,7 @@ int fibonaci(int number){
             return -1;
         }
 }
-
+-------------------------------------------------------------------------
 NAJVACSIE NAJMENSIE CISLO MAX MIN
 int size = sizeof(array)/sizeof(int);
 int max(const int numbers[], int size){
@@ -885,7 +885,7 @@ int max(const int numbers[], int size){
         return 1;
         }
 }
-
+-------------------------------------------------------------------------
 SUCET VSETKYCH CISEL
 
 int sucet(int array[], int size){
@@ -900,7 +900,7 @@ if(array == NULL){
         }
         return result;
 }
-
+-------------------------------------------------------------------------
 REVERSE OF STRING PREHOD PISMENKA
         int size = sizeof(array)/sizeof(int);
         int i,j;
@@ -919,7 +919,7 @@ REVERSE OF STRING PREHOD PISMENKA
           return 0;
 }
 
-
+-------------------------------------------------------------------------
 ZMENA VELKE PISMENA NA MALE PISMENA
 
 void array(const char string[]){
@@ -941,7 +941,7 @@ void array(const char string[]){
                         printf("%c", returned[i]);
                 }        
 }
-
+-------------------------------------------------------------------------
 SAMOHLASKA
 char isSamohlaska(const char array[]){
         if(array != NULL) {
@@ -956,7 +956,7 @@ char isSamohlaska(const char array[]){
                 }
         }
 }
-
+-------------------------------------------------------------------------
 SEARCH NAJDI FIND
 
 int search(int item[], int find, int size){
@@ -970,7 +970,7 @@ int search(int item[], int find, int size){
         
 }
 
-
+-------------------------------------------------------------------------
 
 
 BIG WORD VELKE PISMENO
@@ -988,7 +988,7 @@ int i, j;
         printf("%s", array);
 
 }
-
+-------------------------------------------------------------------------
 
 FAKTORIAL 
   for (i = 1; i <= num; i++){
@@ -996,7 +996,7 @@ FAKTORIAL
   }
 
 
-
+-------------------------------------------------------------------------
 COUTNER OF CHARACTERS
 
 int count(const char string[], const char c){
@@ -1012,7 +1012,7 @@ int count(const char string[], const char c){
 
 
 }
-
+-------------------------------------------------------------------------
 ALFANUM 
 
 int isalfanum(char string[], int size){
@@ -1028,7 +1028,7 @@ int isalfanum(char string[], int size){
         return 0;
         else return 1;
 }
-
+-------------------------------------------------------------------------
 
 ABSOLUTNA HODNOTA 
 int absh(const int num){
@@ -1036,7 +1036,7 @@ int absh(const int num){
                 return b;
         
 }
-
+-------------------------------------------------------------------------
 ALPHABETICAL ORDER OF STRING
 
 void abecedne(char array[], int size){
@@ -1057,7 +1057,7 @@ void abecedne(char array[], int size){
                 printf("%c", array[i]);
         }
 }
-
+-------------------------------------------------------------------------
 
 HESLO
 
@@ -1122,7 +1122,7 @@ counter++;
 return counter; 
 } 
 
-
+-------------------------------------------------------------------------
 int change_whites(char string[]){
 
 int len_s=strlen(string);
@@ -1133,7 +1133,7 @@ string[i]='.';
 }
 return 0;
 } 
-
+-------------------------------------------------------------------------
 
 int is_in_array_2d(const int num, const int size , int array[][size]){
 
@@ -1150,7 +1150,7 @@ int is_in_array_2d(const int num, const int size , int array[][size]){
         }
         return 0;
 } 
-
+-------------------------------------------------------------------------
 
 int is_white(const char c){
 
@@ -1163,7 +1163,7 @@ int is_white(const char c){
  }
 return 0;
 } 
-
+-------------------------------------------------------------------------
 
 int largest_line(const_int size, int array[][size]){
 
@@ -1179,7 +1179,7 @@ j = 0;
 }
 return max;
 } 
-
+-------------------------------------------------------------------------
 LONGEST_ROW
 
 int longest_row(const int rows,const int cols,char array[rows][cols]){ 
@@ -1201,7 +1201,7 @@ int longest_row(const int rows,const int cols,char array[rows][cols]){
         }
         return k;
 } 
-
+-------------------------------------------------------------------------
 MAX_2D
 
 int max_2d(const int size, int array[][size]){ 
@@ -1221,7 +1221,7 @@ int max_2d(const int size, int array[][size]){
         return sum;
 
 } 
-
+-------------------------------------------------------------------------
 MIN_2D
 
 int min_2d(const int size, int array[][size]){
@@ -1241,26 +1241,27 @@ int min_2d(const int size, int array[][size]){
         return sum;
 
 } 
-
+-------------------------------------------------------------------------
 SWAP CASE 2D
 
 void swap_case_2d(const int rows, const int cols, char strings[][cols]){
 
-for(int i=0; i < rows; i++){
-int pocet = strlen(strings[i]);
-if(pocet == 0){
-continue;
-}
-for(int j=0; j < pocet; j++){
-if(strings[i][j] >= 'a' && strings[i][j] <= 'z'){
-strings[i][j] -= 32;}
-else if(strings[i][j]>= 'A' && strings[i][j] <= 'Z'){
-strings[i][j] += 32;
-}
-}
-}
+	for(int i=0; i < rows; i++){
+		int pocet = strlen(strings[i]);
+			if(pocet == 0){
+				continue;
+			}
+			for(int j=0; j < pocet; j++){
+				if(strings[i][j] >= 'a' && strings[i][j] <= 'z'){
+					strings[i][j] -= 32;
+				}
+				else if(strings[i][j]>= 'A' && strings[i][j] <= 'Z'){
+					strings[i][j] += 32;
+					}
+			}
+	}
 } 
-
+-------------------------------------------------------------------------
 VOWELS COUNT 2D
 
 int vowels_count_2d(const int rows, const int cols, char string[][cols]){
@@ -1284,7 +1285,7 @@ k++;}
 }
 return k;
 }
-
+-------------------------------------------------------------------------
 STRING TO UPPER
 
 void string_to_upper(char string[]){
@@ -1299,7 +1300,7 @@ void string_to_upper(char string[]){
     }
   }
 } 
-
+-------------------------------------------------------------------------
 SWAP SIGN
 
 void swap_sign(const int size, int array[]){
@@ -1310,7 +1311,7 @@ void swap_sign(const int size, int array[]){
      array[i] = array[i]*-1); 
     }
 } 
-
+-------------------------------------------------------------------------
 FIB2ARRAY
 
 void fib2array(const int size, int array[]){
@@ -1335,7 +1336,7 @@ return -1;
 }
 return 0; 
 } 
-
+-------------------------------------------------------------------------
 NEGATIVE EVEN
 
 int negative_even(const int number){
@@ -1346,7 +1347,7 @@ else{
 return 0;
 }
 }
-
+-------------------------------------------------------------------------
 SUM GREATER
 
 int sum_greater(const int a, const int b, const int c){
@@ -1362,7 +1363,7 @@ r=(b+c);
 }
 return r;
 } 
-
+-------------------------------------------------------------------------
 SUM DIGITS
 
 int sum_digits(const long int number){
@@ -1379,7 +1380,7 @@ t = t / 10;
 }
 
 return sum; 
-
+-------------------------------------------------------------------------
 SPZ
 
 int check_SPZ(const char spz[]){
@@ -1421,7 +1422,7 @@ return 0;
 } 
 return 0;
 }
-
+-------------------------------------------------------------------------
 DIGITS SUM SEQUENCE
 
 int digits_sum_sequencie(const int size, int array[]) {
@@ -1467,7 +1468,7 @@ int digits_sum_sequencie(const int size, int array[]) {
 	sn = an;;
 	return sn;
 } 
-
+-------------------------------------------------------------------------
 DIGITS SUM SEQUENCE
 
 digits_sum_sequence(const int size, int array[]{
@@ -1481,7 +1482,7 @@ digits_sum_sequence(const int size, int array[]{
        array[i] = sum;
 }
 } 
-
+-------------------------------------------------------------------------
 COMPARE ARRAY SUM
 
 int comare_array_sum(const int array[], const int size, const int sum){
@@ -1505,7 +1506,7 @@ int comare_array_sum(const int array[], const int size, const int sum){
     }
 return 0;
 } 
-
+-------------------------------------------------------------------------
 FIND MAX
 
 int find_max(const int array[], const int size){
@@ -1520,7 +1521,7 @@ int find_max(const int array[], const int size){
 }
  return max;
 }
-
+-------------------------------------------------------------------------
 BRACKET BALANCE
 
 int bracket_balance(char text[]){
@@ -1541,7 +1542,7 @@ countp++;
 sum = countl - countp;
 return sum;
 }
-
+-------------------------------------------------------------------------
 FIND CHAR
 
 int find_char(char text[], char letter){
@@ -1555,7 +1556,7 @@ count++;
 }
 }
 return count;
-
+-------------------------------------------------------------------------
 
 void string_to_upper(char string[]){
   if(string !=NULL){
@@ -1569,7 +1570,7 @@ void string_to_upper(char string[]){
     }
   }
 } 
-
+-------------------------------------------------------------------------
 
 void swap_sign(const int size, int array[]){
     for(int i=0; i < 6; i++){
@@ -1579,7 +1580,7 @@ void swap_sign(const int size, int array[]){
      array[i] = array[i]*-1); 
     }
 } 
-
+-------------------------------------------------------------------------
 
 void fib2array(const int size, int array[]){
      array[0] = 1; 
@@ -1588,7 +1589,7 @@ void fib2array(const int size, int array[]){
       array[i] = array[i-1] + array[i-2];
      }
 }
-
+-------------------------------------------------------------------------
 
 COUNT LEAP YEARS
 
@@ -1614,7 +1615,7 @@ n++;
 return p;  
  }
 }
-
+-------------------------------------------------------------------------
 IS TRIANGLE
 
 int is_triangle(const int alpha, const int beta, const int gamma){
@@ -1626,7 +1627,7 @@ if(alpha < 1 || beta < 1 || gamma < 1 && sum < 180){
 return -1;
 }else{return 0;}
 }
-
+-------------------------------------------------------------------------
 SORT DESC
 
 void sort_desc(int array[], const int size) {
@@ -1648,7 +1649,7 @@ goto End;
 }
 End:;
 } 
-
+-------------------------------------------------------------------------
 SAME CASE
 
 int same_case(const char a, const char b){
@@ -1669,7 +1670,7 @@ int same_case(const char a, const char b){
   } 
   return -1;
 } 
-
+-------------------------------------------------------------------------
 char last_letter(const char string[]){
  char r; 
  r=0; 
@@ -1690,7 +1691,7 @@ char last_letter(const char string[]){
    return r;
 }
 }
-
+-------------------------------------------------------------------------
 int max_2d(const int size, int array[][size]){
     if(array == NULL){
         return -1;
@@ -1707,7 +1708,7 @@ int max_2d(const int size, int array[][size]){
     return highest;
 } 
 
-
+-------------------------------------------------------------------------
 
 int count_negative_evens(const int size, const int array[]){
 if(array == NULL){
@@ -1724,9 +1725,7 @@ return p;
 }
 } 
 
-
-
-
+-------------------------------------------------------------------------
 
 int negative_even(const int number){
 if(number%2==0 && number+(number*-1)==0 && number!=0 ){
@@ -1737,6 +1736,7 @@ return 0;
 }
 } 
 
+-------------------------------------------------------------------------
 
 int pick_possible(const int corner){
 if(corner < 0){
@@ -1749,7 +1749,7 @@ if(corner>0){
 return 1;
 }
 } 
-
+-------------------------------------------------------------------------
 int negative_even(const int number){
 if(number%2==0 && number < 0 && number!=0 ){
 return 1;
@@ -1758,8 +1758,7 @@ else{
 return 0;
 }
 }
-
-
+-------------------------------------------------------------------------
 int check_SPZ(const char spz[]){
 if(array == NULL){
         return -1;
@@ -1797,7 +1796,7 @@ return 0;
 
 }
 } 
-
+-------------------------------------------------------------------------
 
 int check_SPZ(const char spz[]){
 if(array == NULL){
@@ -1837,7 +1836,7 @@ return 0;
 }
 }
 
-
+-------------------------------------------------------------------------
 Program
 ---------------------------------
 int cas;
@@ -1917,7 +1916,7 @@ void pick_all(){
     }
 }
 
-
+-------------------------------------------------------------------------
 
 void find_south_east(){
     while(not_facing_south()){
@@ -1937,7 +1936,7 @@ void find_south_east(){
     }
 }
 
-
+-------------------------------------------------------------------------
 
 bool facing_vertical(){
     if (facing_south() || facing_north()){
@@ -1948,7 +1947,7 @@ bool facing_vertical(){
     }
 }
 
-
+-------------------------------------------------------------------------
 
 bool no_beepers(){
     if (no_beepers_present() && no_beepers_in_bag()){
@@ -1959,7 +1958,7 @@ bool no_beepers(){
     }
 }
 
-
+-------------------------------------------------------------------------
 
 void turn_to_south(){
     while (not_facing_south()){
@@ -1967,7 +1966,7 @@ void turn_to_south(){
     }
 }
 
-
+-------------------------------------------------------------------------
 
 void mark_empty_line(){
     put_beeper();
@@ -1978,7 +1977,7 @@ void mark_empty_line(){
 }
 
 
-
+-------------------------------------------------------------------------
 
 - - - stairs - - -
 
@@ -2012,7 +2011,7 @@ void stairs() {
    }
 
 }
-
+-------------------------------------------------------------------------
 
 
 - - - corner_marker - - -
@@ -2045,7 +2044,7 @@ void corner_marker() {
     }
 }
 
-
+-------------------------------------------------------------------------
 
 - - - find_center - - -
 
@@ -2084,7 +2083,7 @@ void find_center() {
     center();
 }
 
-
+-------------------------------------------------------------------------
 - - - chessboard - - -
 
 void turn_right() {
@@ -2165,7 +2164,7 @@ void chessboard() {
     }
 }
 
-
+-------------------------------------------------------------------------
 
 - - - divide - - - 
 
@@ -2186,7 +2185,7 @@ void divide(){
     }
 }
 
-
+-------------------------------------------------------------------------
 
 - - - olympics - - -
 
@@ -2209,7 +2208,7 @@ void olympics() {
 
 }
 
-
+-------------------------------------------------------------------------
 
 - - - x_mas - - -
 
@@ -2269,7 +2268,7 @@ void x_mas() {
 
 }
 
-
+-------------------------------------------------------------------------
 Round 2
 ------------------------------------------
 int all_positives(const int size, const int array[]) {
@@ -2286,7 +2285,7 @@ int all_positives(const int size, const int array[]) {
     return 1;
 }
 
-
+-------------------------------------------------------------------------
 
 int binary_num(const int num) {
     if (num >= -1000 && num <= 1000) {
@@ -2300,7 +2299,7 @@ int binary_num(const int num) {
     return -1;
 }
 
-
+-------------------------------------------------------------------------
 
 int count_positives(const int size, const int array[]) {
     
@@ -2317,7 +2316,7 @@ int count_positives(const int size, const int array[]) {
     return counter;
 }
 
-
+-------------------------------------------------------------------------
 
 int count_whites(const char string[]) {
     
@@ -2334,7 +2333,7 @@ int count_whites(const char string[]) {
     return counter;
 }
 
-
+-------------------------------------------------------------------------
 
 int direction_correction(const int degree) {
     int stupne = degree;
@@ -2348,13 +2347,13 @@ int direction_correction(const int degree) {
     return stupne;
 }
 
-
+-------------------------------------------------------------------------
 
 int div_by_3(const int num) {
     return (num % 3 == 0);
 }
 
-
+-------------------------------------------------------------------------
 
 int find_first_A(const char string[]) {
     
@@ -2370,7 +2369,7 @@ int find_first_A(const char string[]) {
     return -1;
 }
 
-
+-------------------------------------------------------------------------
 int guess_eval(const int guess, const int my_number) {
     int result = -1;
     if (guess > my_number) {
@@ -2385,13 +2384,13 @@ int guess_eval(const int guess, const int my_number) {
     return result;
 }
 
-
+-------------------------------------------------------------------------
 
 int is_white(const char c) {
     return (c == ' ' || c == '\t' || c == '\n');
 }
 
-
+-------------------------------------------------------------------------
 
 int last_positive(const int size, const int array[]) {
     
@@ -2407,6 +2406,7 @@ int last_positive(const int size, const int array[]) {
     return -1;
 }
 
+-------------------------------------------------------------------------
 
 int leap_year(const int year) {
     int result = -1;
@@ -2431,6 +2431,7 @@ int leap_year(const int year) {
     return result;
 }
 
+-------------------------------------------------------------------------
 
 int same_case(const char a, const char b) {
     if (isalpha(a) && isalpha(b)) {
@@ -2448,7 +2449,7 @@ int same_case(const char a, const char b) {
     return -1;
 }
 
-
+-------------------------------------------------------------------------
 
 void change_whites(char string []) {
     for (int i = 0; i < strlen(string); i++) {
@@ -2458,7 +2459,7 @@ void change_whites(char string []) {
     }
 }
 
-
+-------------------------------------------------------------------------
 
 void string_to_upper(char string[]) {
     if (string != NULL) {
@@ -2470,7 +2471,7 @@ void string_to_upper(char string[]) {
     }
 }
 
-
+-------------------------------------------------------------------------
 
 void swap_sign(const int size, int array[]) {
     for (int i = 0; i < size; i++) {
@@ -2504,7 +2505,7 @@ int longest_row(const int rows, const int cols, char array[rows][cols]);
 
 
 
-
+-------------------------------------------------------------------------
 int max_2d(const int size, int array[][size]) {
     
     if (array == NULL) {
@@ -2523,7 +2524,7 @@ int max_2d(const int size, int array[][size]) {
 
     return max;
 }
-
+-------------------------------------------------------------------------
 int vowels_count_2d(const int rows, const int cols, char strings[][cols]) {
     if (strings == NULL) {
         return -1;
@@ -2548,7 +2549,7 @@ int vowels_count_2d(const int rows, const int cols, char strings[][cols]) {
 
     return count;
 }
-
+-------------------------------------------------------------------------
 int is_in_array_2d(const int num, const int size, int array[][size]) {
     if (array == NULL) {
         return -1; 
@@ -2564,7 +2565,7 @@ int is_in_array_2d(const int num, const int size, int array[][size]) {
 
     return 0; 
 }
-
+-------------------------------------------------------------------------
 
 int largest_line(const int size, int array[][size]) {
     if (array == NULL) {
@@ -2589,7 +2590,7 @@ int largest_line(const int size, int array[][size]) {
 
     return max_index;
 }
-
+-------------------------------------------------------------------------
 
 
 void swap_case_2d(const int rows, const int cols, char strings[][cols]) {
@@ -2608,7 +2609,7 @@ void swap_case_2d(const int rows, const int cols, char strings[][cols]) {
     }
 }
 
-
+-------------------------------------------------------------------------
 
 int largest_col(const int size, int array[][size]) {
     if (array == NULL) {
@@ -2633,7 +2634,7 @@ int largest_col(const int size, int array[][size]) {
 
     return max_index;
 }
-
+-------------------------------------------------------------------------
 
 int count_zeroes_2d(const int size, int array[][size]) {
     if (array == NULL) {
@@ -2653,7 +2654,7 @@ int count_zeroes_2d(const int size, int array[][size]) {
     return count;
 }
 
-
+-------------------------------------------------------------------------
 
 
 void swap_sign_2d(const int size, int array[][size]) {
@@ -2667,7 +2668,7 @@ void swap_sign_2d(const int size, int array[][size]) {
         }
     }
 }
-
+-------------------------------------------------------------------------
 
 int longest_row(const int rows, const int cols, char array[rows][cols]) {
     if (array == NULL || rows < 1 || cols < 1) {
@@ -2692,7 +2693,7 @@ int longest_row(const int rows, const int cols, char array[rows][cols]) {
 
     return max_index;
 }
-
+-------------------------------------------------------------------------
 
 
 
