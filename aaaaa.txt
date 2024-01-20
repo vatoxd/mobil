@@ -3,7 +3,28 @@
 #include <string.h>
 #include <ctype.h>
 
+-------------------------------------------------------
+ ALL POSITIVES
+int all_positives(const int size, const int array[]){
+  int count = 0;
 
+  if(array == NULL){
+    return -1;
+  }
+
+  for(int i = 0; i < size; i ++){
+    if(array[i] > 0){
+      count++;
+    }
+  }
+
+  if(count == size){
+    return 1;
+  }else{
+    return 0;
+  }
+}
+------------------------------------------------------
 //4. LEAP YEAR
 int leap_year(const int year){
   if(year < 1 || year > 4443){
