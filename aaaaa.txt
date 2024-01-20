@@ -3,6 +3,26 @@
 #include <string.h>
 #include <ctype.h>
 
+// VOWEL COUNT
+int vowels_count(const int rows, const int cols, char string[][cols]){
+  int count = 0;
+
+  if(string == NULL){
+    return -1;
+  }
+
+  for(int i = 0; i < rows; i++){
+    for(int j = 0; j < cols; j++){
+      char character = tolower(string[i][j]);
+      if(character == 'a' || character == 'e' || character == 'i' || character == 'u' || character == 'o' || character == 'y'){
+        count++;
+      }
+    }
+  }
+
+  return count;
+}
+
 
 // IS IN ARRAY
 int is_in_array_2d(const int num, const int size, int array[][size]){
