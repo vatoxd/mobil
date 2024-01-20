@@ -2,7 +2,32 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
- 
+
+
+// LARGEST COLUMN
+int largest_col(const int size, int array[][size]){
+  int largest = 0;
+  int sum = 0;
+  int index = 0;
+  if(array == NULL){
+    return -1;
+  }
+
+  for(int i = 0; i < size; i++){
+    for(int j = 0; j < size; j++){
+      sum += array[j][i];
+    }
+    if(sum > largest){
+      largest = sum;
+      sum = 0;
+      index = i;
+    }
+  }
+
+  return index;
+}
+
+
 long multiples(const int below) {
   if (below < 0 || below >= 10000) {
     return -1;
