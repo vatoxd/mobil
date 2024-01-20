@@ -3,6 +3,33 @@
 #include <string.h>
 #include <ctype.h>
 
+
+//4. LEAP YEAR
+int leap_year(const int year){
+  if(year < 1 || year > 4443){
+    return -1;
+  }
+
+  if(year % 400 == 0){
+    return 1;
+  }
+
+  if(year % 100 == 0){
+    return 0;
+  }
+
+  if(year % 4 == 0){
+    return 1;
+  }
+
+  if(year % 1 == 0){
+    return 0;
+  }
+
+  return -2;
+}
+
+
 // VOWEL COUNT
 int vowels_count(const int rows, const int cols, char string[][cols]){
   int count = 0;
